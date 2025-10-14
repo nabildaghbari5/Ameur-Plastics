@@ -1,0 +1,21 @@
+ <section class="hero">
+  <div class="hero-container">
+    <img class="hero-image" [src]="heroes[activeIndex].imageUrl" [alt]="heroes[activeIndex].title" />
+    <div class="hero-overlay">
+      <h1 class="hero-title">{{ heroes[activeIndex].title }}</h1>
+      <p class="hero-subtitle">{{ heroes[activeIndex].subtitle }}</p>
+    </div>
+    <div class="pagination">
+      <div 
+        *ngFor="let h of heroes; let i = index" 
+        class="pagination-item" 
+        [class.active]="i === activeIndex"
+        (click)="activeIndex = i">
+        {{ '0' + (i + 1) }}
+      </div>
+      <div class="pause-button" (click)="isPaused = !isPaused">
+        {{ isPaused ? '▶' : 'II' }}
+      </div>
+    </div>  
+  </div>
+ </section>

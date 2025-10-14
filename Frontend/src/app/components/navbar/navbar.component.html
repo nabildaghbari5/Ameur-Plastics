@@ -1,0 +1,43 @@
+    
+    <nav class="navbar" [class.scrolled]="isScrolled">
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <img src="./assets/images/logo.png" alt="Ameur Plastics Logo" class="logo-img">
+        </div>
+
+        <button class="mobile-menu-btn" (click)="toggleMobileMenu()" [attr.aria-expanded]="isMobileMenuOpen">
+          <span class="hamburger-line" [class.open]="isMobileMenuOpen"></span>
+          <span class="hamburger-line" [class.open]="isMobileMenuOpen"></span>
+          <span class="hamburger-line" [class.open]="isMobileMenuOpen"></span>
+        </button>
+
+        <ul class="navbar-menu" [class.mobile-open]="isMobileMenuOpen">
+          <li><a href="#accueil" (click)="closeMobileMenu()">ACCUEIL</a></li>
+          <li><a href="#presentation" (click)="closeMobileMenu()">PRÉSENTATION</a></li>
+          <li class="dropdown" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
+            <a href="#domaines" class="dropdown-toggle" (click)="toggleDropdown($event)">
+              DOMAINES D'APPLICATION
+              <svg class="dropdown-icon" [class.open]="isDropdownOpen" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <ul class="dropdown-menu" [class.open]="isDropdownOpen">
+              <li><a href="#automobile" (click)="closeMobileMenu()">Automobile</a></li>
+              <li><a href="#batiment" (click)="closeMobileMenu()">Bâtiment</a></li>
+              <li><a href="#industrie" (click)="closeMobileMenu()">Industrie</a></li>
+              <li><a href="#agriculture" (click)="closeMobileMenu()">Agriculture</a></li>
+              <li><a href="#medical" (click)="closeMobileMenu()">Médical</a></li>
+            </ul>
+          </li>
+          <li><a href="#qualite" (click)="closeMobileMenu()">POLITIQUE QUALITÉ</a></li>
+          <li><a href="#contact" (click)="closeMobileMenu()">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+    <app-hero></app-hero> 
+    <app-tube-pvc></app-tube-pvc>
+    <app-features></app-features>
+    <app-footer></app-footer>

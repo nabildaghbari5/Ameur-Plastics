@@ -1,0 +1,18 @@
+ <section class="features" id="presentation">
+      <div class="features-container">
+        <div class="section-header">
+          <h2 class="section-title">Notre Expertise</h2>
+          <p class="section-subtitle">
+            Des solutions innovantes et durables pour tous vos besoins en transformation plastique
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card" *ngFor="let feature of features">
+            <div class="feature-icon" [innerHTML]="feature.icon"></div>
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-description">{{ feature.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>

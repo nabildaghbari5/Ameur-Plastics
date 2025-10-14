@@ -1,0 +1,173 @@
+
+<div class="tube-pvc-container">
+  
+  <!-- Hero Section avec Animation -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="badge">Produit Premium</div>
+        <h1 class="hero-title">
+          <span class="title-line">TUBE PVC</span>
+          <span class="title-gradient">Haute Performance</span>
+        </h1>
+        <p class="hero-description">
+          Tubes pression fabriqués à partir de chlorure de vinyle et d'adjuvants sélectionnés. 
+          Solutions innovantes pour le transport des fluides avec une qualité certifiée ISO 9001.
+        </p>
+        <div class="hero-features">
+          <div class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Résistance maximale</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Durabilité garantie</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Éco-responsable</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="btn-primary">Découvrir nos produits</button>
+          <button class="btn-secondary">Contactez-nous</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-pipes">
+          <div class="pipe pipe-1"></div>
+          <div class="pipe pipe-2"></div>
+          <div class="pipe pipe-3"></div>
+        </div>
+        <div class="decorative-circle circle-1"></div>
+        <div class="decorative-circle circle-2"></div>
+        <div class="decorative-circle circle-3"></div>
+      </div>
+    </div>
+    <div class="wave-bottom">
+      <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 C300,100 500,100 600,80 C700,60 900,0 1200,20 L1200,120 L0,120 Z" fill="currentColor"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Section Carrousel Domaines d'Application -->
+  <section class="applications-section">
+    <div class="section-header">
+      <span class="section-badge">Nos Solutions</span>
+      <h2 class="section-title">Domaines d'Application</h2>
+      <p class="section-subtitle">
+        Des solutions adaptées à chaque secteur d'activité
+      </p>
+    </div>
+
+    <div class="carousel-container" 
+         (mouseenter)="onMouseEnter()" 
+         (mouseleave)="onMouseLeave()">
+      <div class="carousel-wrapper">
+        <div class="carousel-track" 
+             [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
+          <div *ngFor="let app of applications; let i = index" 
+               class="carousel-slide"
+               [class.active]="i === currentSlide">
+            <div class="slide-content">
+              <div class="slide-image">
+                <img [src]="app.imageUrl" [alt]="app.title">
+                <div class="slide-overlay"></div>
+              </div>
+              <div class="slide-info">
+                <span class="slide-icon">{{ app.icon }}</span>
+                <h3 class="slide-title">{{ app.title }}</h3>
+                <p class="slide-description">{{ app.description }}</p>
+                <button class="slide-btn">En savoir plus →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-btn prev" (click)="prevSlide()">
+        <span>‹</span>
+      </button>
+      <button class="carousel-btn next" (click)="nextSlide()">
+        <span>›</span>
+      </button>
+
+      <div class="carousel-indicators">
+        <button *ngFor="let app of applications; let i = index"
+                class="indicator"
+                [class.active]="i === currentSlide"
+                (click)="goToSlide(i)">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Qualité avec Stats -->
+  <section class="quality-section">
+    <div class="quality-content">
+      <div class="quality-left">
+        <span class="quality-badge">Excellence</span>
+        <h2 class="quality-title">La Qualité Totale</h2>
+        <h3 class="quality-subtitle">Au Cœur de Notre Culture</h3>
+        <p class="quality-text">
+          Notre engagement envers l'excellence se traduit par des processus rigoureux, 
+          des contrôles qualité stricts et une innovation constante. Chaque tube est testé 
+          pour garantir performance et durabilité maximales.
+        </p>
+        <button class="quality-btn">Découvrir notre démarche qualité</button>
+      </div>
+      <div class="quality-right">
+        <div class="stats-grid">
+          <div *ngFor="let stat of qualityStats" class="stat-card">
+            <span class="stat-icon">{{ stat.icon }}</span>
+            <div class="stat-value">{{ stat.value }}</div>
+            <div class="stat-label">{{ stat.label }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Clients avec Animation -->
+  <section class="clients-section">
+    <div class="section-header">
+      <span class="section-badge">Partenaires</span>
+      <h2 class="section-title">Ils Nous Font Confiance</h2>
+      <p class="section-subtitle">
+        Des partenariats solides avec les leaders du secteur
+      </p>
+    </div>
+
+    <div class="clients-carousel">
+      <div class="clients-track">
+        <div *ngFor="let client of clients" class="client-item">
+          <div class="client-card">
+            <img [src]="client.logoUrl" [alt]="client.name">
+          </div>
+        </div>
+        <!-- Duplication pour effet infini -->
+        <div *ngFor="let client of clients" class="client-item">
+          <div class="client-card">
+            <img [src]="client.logoUrl" [alt]="client.name">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section CTA Finale -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">Prêt à Démarrer Votre Projet ?</h2>
+      <p class="cta-text">
+        Contactez nos experts pour obtenir un devis personnalisé et des conseils adaptés à vos besoins
+      </p>
+      <div class="cta-actions">
+        <button class="btn-cta-primary">Demander un devis</button>
+        <button class="btn-cta-secondary">Télécharger le catalogue</button>
+      </div>
+    </div>
+  </section>
+
+</div>
