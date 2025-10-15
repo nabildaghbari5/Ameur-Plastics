@@ -1,6 +1,6 @@
 /* Global Styles */
 .presentation-container {
-margin-top: 120px;
+  margin-top: 50px;
   width: 100%;
   background: #ffffff;
   overflow-x: hidden;
@@ -406,6 +406,7 @@ margin-top: 120px;
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   position: relative;
   overflow: hidden;
+  border-radius: 25px;
 }
 
 .values-section::before {
