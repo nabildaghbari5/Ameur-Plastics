@@ -8,6 +8,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TubePvcComponent } from './components/tube-pvc/tube-pvc.component';
+import { PresentationComponent } from './pages/presentation/presentation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TubePvcComponent } from './components/tube-pvc/tube-pvc.component';
     HeroComponent,
     FeaturesComponent,
     FooterComponent,
-    TubePvcComponent
+    TubePvcComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,

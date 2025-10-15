@@ -19,46 +19,46 @@ interface Client {
   styleUrls: ['./tube-pvc.component.scss']
 })
 export class TubePvcComponent implements OnInit, OnDestroy {
-  applications: Application[] = [
-    {
+   applications: Application[] = [
+      {
       title: 'ASSAINISSEMENT GRAVITAIRE',
       description: 'Gestion et évacuation des eaux usées par réseaux gravitaires pour collectivités et industries',
-      imageUrl: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200&q=80',
-      icon: '🚰'
+      imageUrl: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1200&h=800&fit=crop&q=80',
+      icon: '🚿'
     },
     {
-      title: 'Climatisation & HVAC',
-      description: 'Systèmes de climatisation et ventilation industriels',
-      imageUrl: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80',
-      icon: '❄️'
+      title: 'ELECTRICITÉ & TÉLÉCOM',
+      description: 'Protection et distribution des câbles électriques et réseaux de télécommunication',
+      imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&h=800&fit=crop&q=80',
+      icon: '⚡'
     },
     {
-      title: 'Infrastructure',
-      description: 'Canalisations pour projets d\'infrastructure majeurs',
-      imageUrl: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80',
-      icon: '🏗️'
+      title: 'EVACUATION DES EAUX USÉES & PLUVIALES',
+      description: 'Systèmes de drainage et d\'évacuation des eaux de pluie et eaux domestiques',
+      imageUrl: 'https://images.unsplash.com/photo-1590642916589-592bca10dfbf?w=1200&h=800&fit=crop&q=80',
+      icon: '💧'
     },
     {
-      title: 'Agriculture & Irrigation',
-      description: 'Systèmes d\'irrigation pour l\'agriculture moderne',
+      title: 'FORAGE',
+      description: 'Tubes de forage pour captage et extraction d\'eau souterraine',
+      imageUrl: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&h=800&fit=crop&q=80',
+      icon: '🏞️'
+    },
+    {
+      title: 'IRRIGATION',
+      description: 'Solutions d\'irrigation pour l\'agriculture et espaces verts avec optimisation des ressources',
       imageUrl: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&q=80',
       icon: '🌾'
-    },
-    {
-      title: 'Évacuation & Assainissement',
-      description: 'Solutions pour l\'évacuation des eaux usées',
-      imageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80',
-      icon: '♻️'
     }
   ];
 
   clients: Client[] = [
-    { name: 'SONEDE', logoUrl: 'https://via.placeholder.com/180x90/3b82f6/ffffff?text=SONEDE' },
-    { name: 'ONAS', logoUrl: 'https://via.placeholder.com/180x90/10b981/ffffff?text=ONAS' },
-    { name: 'STEG', logoUrl: 'https://via.placeholder.com/180x90/f59e0b/ffffff?text=STEG' },
-    { name: 'OTC', logoUrl: 'https://via.placeholder.com/180x90/ef4444/ffffff?text=OTC' },
-    { name: 'CRDA', logoUrl: 'https://via.placeholder.com/180x90/8b5cf6/ffffff?text=CRDA' },
-    { name: 'TUNISIE TELECOM', logoUrl: 'https://via.placeholder.com/180x90/06b6d4/ffffff?text=TT' }
+    { name: 'SONEDE', logoUrl: '/assets/images/client1.png' },
+    { name: 'ONAS', logoUrl: '/assets/images/client2.png' },
+    { name: 'STEG', logoUrl: '/assets/images/client3.png' },
+    { name: 'OTC', logoUrl: '/assets/images/client4.png' },
+    { name: 'CRDA', logoUrl: '/assets/images/client5.png' },
+    { name: 'TUNISIE TELECOM', logoUrl: '/assets/images/client6.png' }
   ];
 
   qualityStats = [

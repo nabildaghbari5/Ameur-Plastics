@@ -12,8 +12,8 @@
         </button>
 
         <ul class="navbar-menu" [class.mobile-open]="isMobileMenuOpen">
-          <li><a href="#accueil" (click)="closeMobileMenu()">ACCUEIL</a></li>
-          <li><a href="#presentation" (click)="closeMobileMenu()">PRÉSENTATION</a></li>
+          <li><a routerLink="" (click)="closeMobileMenu()">ACCUEIL</a></li>
+          <li><a routerLink="/presentation" (click)="closeMobileMenu()">PRÉSENTATION</a></li>
           <li class="dropdown" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
             <a href="#domaines" class="dropdown-toggle" (click)="toggleDropdown($event)">
               DOMAINES D'APPLICATION
@@ -35,9 +35,4 @@
       </div>
     </nav>
 
-
-
-    <app-hero></app-hero> 
-    <app-tube-pvc></app-tube-pvc>
-    <app-features></app-features>
-    <app-footer></app-footer>
+ 

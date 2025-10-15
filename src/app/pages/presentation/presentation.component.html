@@ -1,0 +1,135 @@
+<div class="presentation-container">
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Depuis 2004</div>
+      <h1 class="hero-title">
+        Spécialiste de la Transformation<br/>
+        <span class="gradient-text">des Matières Plastiques</span>
+      </h1>
+      <p class="hero-description">
+        Leader dans la fabrication de solutions plastiques innovantes avec plus de {{ yearsOfExperience }} ans d'expertise
+      </p>
+      
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div *ngFor="let stat of statistics; let i = index" 
+           class="stat-card"
+           [style.animation-delay.ms]="i * 150">
+        <div class="stat-icon" [style.color]="stat.color">{{ stat.icon }}</div>
+        <div class="stat-value">{{ stat.value }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
+        <div class="stat-decoration" [style.background]="stat.color"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-grid">
+      <div class="about-image">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=1000&fit=crop&q=80" 
+               alt="Production">
+          <div class="image-overlay"></div>
+          <div class="image-badge">
+            <span class="badge-icon">🏆</span>
+            <div class="badge-content">
+              <div class="badge-title">ISO 9001</div>
+              <div class="badge-subtitle">Certifié</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-content">
+        <span class="section-badge">Notre Histoire</span>
+        <h2 class="section-title">Une Entreprise à Taille Humaine</h2>
+        <p class="about-text">
+          Créée en <strong>2004</strong>, notre entreprise s'est imposée comme un acteur majeur 
+          dans la transformation des matières plastiques. Nous combinons l'expertise d'un personnel 
+          qualifié avec des équipements issus des dernières technologies.
+        </p>
+        <p class="about-text">
+          Avec plus de <strong>400 collaborateurs</strong> répartis sur <strong>2 sites de production</strong>, 
+          nous conservons notre identité de PME appréciée. Cette structure nous permet de rester à l'écoute 
+          de notre clientèle et de nous adapter à ses exigences avec réactivité et souplesse.
+        </p>
+        
+        <div class="features-list">
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <strong>GPAO Octal</strong> - Système de gestion intégré (commercial, production, achats, stocks, qualité)
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <strong>Qualité certifiée</strong> - Processus rigoureux et contrôles à chaque étape
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <strong>Service personnalisé</strong> - Sans lourdeur administrative
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="values-header">
+      <span class="section-badge light">Nos Valeurs</span>
+      <h2 class="section-title light">Ce Qui Nous Définit</h2>
+      <p class="values-subtitle">
+        Des principes forts qui guident chaque action au quotidien
+      </p>
+    </div>
+    
+    <div class="values-grid">
+      <div *ngFor="let value of values; let i = index" 
+           class="value-card"
+           [style.animation-delay.ms]="i * 100">
+        <div class="value-icon-wrapper">
+          <span class="value-icon">{{ value.icon }}</span>
+        </div>
+        <h3 class="value-title">{{ value.title }}</h3>
+        <p class="value-description">{{ value.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="partners-section">
+    <div class="partners-header">
+      <span class="section-badge">Nos Partenaires</span>
+      <h2 class="section-title">Références Marchés</h2>
+      <p class="partners-subtitle">
+        Des collaborations de confiance avec les acteurs majeurs du secteur
+      </p>
+    </div>
+    
+    <div class="partners-grid">
+      <div *ngFor="let partner of partners; let i = index" 
+           class="partner-card"
+           [style.animation-delay.ms]="i * 80">
+        <div class="partner-logo-wrapper">
+          <img [src]="partner.logoUrl" [alt]="partner.name">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+</div>

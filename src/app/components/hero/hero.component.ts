@@ -13,20 +13,20 @@ interface Hero {
 export class HeroComponent implements OnInit, OnDestroy {
   heroes: Hero[] = [
     {
-      title: 'Innovation Redéfinie',
-      subtitle: 'Transformez vos idées en solutions digitales exceptionnelles',
-        imageUrl: 'assets/images/hero1.png'
+      title: ' Innovation en plasturgie',
+      subtitle: 'Des solutions plastiques précises et fiables pour l’industrie. ',
+      imageUrl: 'assets/images/hero1.png'
     },
     {
-      title: 'Excellence Technologique',
-      subtitle: 'Des solutions de pointe pour propulser votre entreprise',
+      title: 'Produits durables ',
+      subtitle: 'Assainissement, irrigation et électricité avec performance garantie. ',
       imageUrl: 'assets/images/hero2.png'
-    },
+    },  
     {
-      title: 'Vision d\'Avenir',
-      subtitle: 'Ensemble, construisons le futur de votre entreprise',
+      title: 'Votre partenaire sur-mesure',
+      subtitle: 'Accompagnement et solutions plastiques adaptées à vos projets. ',
       imageUrl: 'assets/images/hero3.png'
-    }
+    } 
   ];
 
   activeIndex = 0;
