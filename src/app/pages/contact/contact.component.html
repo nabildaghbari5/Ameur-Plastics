@@ -1,0 +1,188 @@
+<div class="row">
+    <div class="col-xl-12 position-relative ">
+        <div class="row align-items-center mt-4 mt-sm-0 pt-2 pt-sm-0 mb-3">
+            <div class="col-md">
+                <!-- Nav tabs -->
+                <div class="tab-pane active" id="overview-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <section class="contact-section">
+                                <div class="container">
+                                  <div class="section-header">
+                                    <h2 class="section-title">Entrez en Contact</h2>
+                                    <p class="section-description">
+                                      Intéressé par une collaboration ? Connectons-nous !
+                                    </p>
+                                  </div>
+                                  
+                                  <div class="contact-container">
+                                    <div class="contact-form-container">
+                                      <div class="card form-card">
+                                        <h3 class="card-title">Envoyez-moi un Message</h3>
+                                        <form class="contact-form" (ngSubmit)="submitForm()" #contactForm="ngForm" *ngIf="!formSubmitted">
+                                          <div class="form-group">
+                                            <label for="name">Nom</label>
+                                            <div class="input-wrapper">
+                                              <i class="fas fa-user"></i>
+                                              <input 
+                                                type="text" 
+                                                id="name" 
+                                                name="name"
+                                                placeholder="Votre nom" 
+                                                [(ngModel)]="formData.name"
+                                                required
+                                                #nameInput="ngModel"
+                                              />
+                                            </div>
+                                            <div class="error-message" *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)">
+                                              Veuillez entrer votre nom
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <div class="input-wrapper">
+                                              <i class="fas fa-envelope"></i>
+                                              <input 
+                                                type="email" 
+                                                id="email" 
+                                                name="email"
+                                                placeholder="Votre email" 
+                                                [(ngModel)]="formData.email"
+                                                required
+                                                email
+                                                #emailInput="ngModel"
+                                              />
+                                            </div>
+                                            <div class="error-message" *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+                                              <span *ngIf="emailInput.errors?.['required']">Veuillez entrer votre email</span>
+                                              <span *ngIf="emailInput.errors?.['email']">Veuillez entrer un email valide</span>
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="form-group">
+                                            <label for="subject">Sujet</label>
+                                            <div class="input-wrapper">
+                                              <i class="fas fa-tag"></i>
+                                              <select 
+                                                id="subject" 
+                                                name="subject"
+                                                [(ngModel)]="formData.subject"
+                                                required
+                                                #subjectInput="ngModel"
+                                              >
+                                                <option value="" disabled selected>Sélectionnez un sujet</option>
+                                                <option value="Proposition de collaboration">Proposition de collaboration</option>
+                                                <option value="project">Projet</option>
+                                                <option value="question">Question</option>
+                                                <option value="other">Autre</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <div class="input-wrapper textarea-wrapper">
+                                              <i class="fas fa-comment-alt"></i>
+                                              <textarea 
+                                                id="message" 
+                                                name="message"
+                                                rows="5" 
+                                                placeholder="Votre message"
+                                                [(ngModel)]="formData.message"
+                                                required
+                                                minlength="10"
+                                                #messageInput="ngModel"
+                                              ></textarea>
+                                            </div>
+                                            <div class="error-message" *ngIf="messageInput.invalid && (messageInput.dirty || messageInput.touched)">
+                                              <span *ngIf="messageInput.errors?.['required']">Veuillez entrer votre message</span>
+                                              <span *ngIf="messageInput.errors?.['minlength']">Le message doit contenir au moins 10 caractères</span>
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="form-actions">
+                                            <button type="submit" class="btn-primary" [disabled]="contactForm.invalid">
+                                              <span>Envoyer le Message</span>
+                                              <i class="fas fa-paper-plane"></i>
+                                            </button>
+                                            <button type="reset" class="btn-secondary">
+                                              <span>Réinitialiser</span>
+                                              <i class="fas fa-redo"></i>
+                                            </button>
+                                          </div>
+                                        </form>
+                                        
+                                        <div class="form-success" *ngIf="formSubmitted">
+                                          <div class="success-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                          </div>
+                                          <h4>Message Envoyé!</h4>
+                                          <p>Merci pour votre message. Je vous répondrai dans les plus brefs délais.</p>
+                                          <button class="btn-outline" (click)="resetForm()">Envoyer un autre message</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                                    <div class="contact-info-container">
+                                      <div class="card info-card">
+                                        <h3 class="card-title">Informations de Contact</h3>
+                                        
+                                        <div class="contact-info">
+                                          <div class="contact-item" *ngFor="let item of contactInfo">
+                                            <div class="contact-icon">
+                                              <i [class]="item.icon"></i>
+                                            </div>
+                                            <div class="contact-details">
+                                              <h4>{{item.title}}</h4>
+                                              <a [href]="item.link" target="_blank" *ngIf="item.link">{{item.value}}</a>
+                                              <span *ngIf="!item.link">{{item.value}}</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        
+                                        <div class="social-links">
+                                          <h4>Réseaux Sociaux</h4>
+                                          <div class="social-icons">
+                                            <a href="https://github.com/username" target="_blank" class="social-icon github">
+                                              <i class="fab fa-github"></i>
+                                            </a>
+                                            <a href="https://linkedin.com/in/username" target="_blank" class="social-icon linkedin">
+                                              <i class="fab fa-linkedin-in"></i>
+                                            </a>
+                                            <a href="https://twitter.com/username" target="_blank" class="social-icon twitter">
+                                              <i class="fab fa-twitter"></i>
+                                            </a>
+                                            <a href="https://dribbble.com/username" target="_blank" class="social-icon dribbble">
+                                              <i class="fab fa-dribbble"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                        
+                                        <div class="availability">
+                                          <h4>Disponibilité</h4>
+                                          <div class="availability-status">
+                                            <span class="status-indicator available"></span>
+                                            <span>Disponible pour de nouveaux projets</span>
+                                          </div>
+                                          <p class="availability-note">Réponse généralement sous 24-48 heures</p>
+                                        </div>
+                                      </div>
+                                      
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+                        </div>
+                        <br><br><br><br><br>
+                        <br><br>
+       
+                        <!--end card-body-->
+                    </div><!-- end card -->
+                </div>
+            </div><!--end col-->
+
+        </div><!--end row-->   
+    </div><!--end col-->
+</div><!--end row-->

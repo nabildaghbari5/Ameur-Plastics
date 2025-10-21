@@ -9,6 +9,8 @@ import { FeaturesComponent } from './components/features/features.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TubePvcComponent } from './components/tube-pvc/tube-pvc.component';
 import { PresentationComponent } from './pages/presentation/presentation.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { PresentationComponent } from './pages/presentation/presentation.compone
     FeaturesComponent,
     FooterComponent,
     TubePvcComponent,
-    PresentationComponent
+    PresentationComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
