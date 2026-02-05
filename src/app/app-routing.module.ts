@@ -27,7 +27,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [ 
-    RouterModule.forRoot(routes) ,
      RouterModule.forRoot(routes, {
       scrollPositionRestoration: 'top', // 👈 ceci fait remonter la page en haut
       anchorScrolling: 'enabled'        // (optionnel) si tu utilises des ancres #id  
